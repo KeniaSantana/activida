@@ -7,20 +7,99 @@
     <h2 class="text-danger fw-bold">Vehículos Antiguos</h2>
     <p class="lead">Una mirada al origen y evolución de los automóviles.</p>
 
-    <div class="row">
-        {% for vehiculo in ['Ford Modelo T', 'Chevrolet Bel Air', 'Volkswagen Escarabajo', 'Cadillac 1947', 'Mustang 1965'] %}
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm h-100">
-                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ vehiculo }}">
+    <h4 class="mt-4 text-primary">Ford Modelo T</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/t.jpg') }}" class="card-img-top" alt="Ford Modelo T">
                 <div class="card-body">
-                    <h5 class="card-title">{{ vehiculo }}</h5>
-                    <p class="card-text">Símbolo de innovación y diseño clásico.</p>
+                    <h5 class="card-title">Ford Modelo T</h5>
+                    <p class="card-text">
+                        El Ford Modelo T, producido entre 1908 y 1927, fue un automóvil icónico que revolucionó la industria automotriz. 
+                        Creado por Henry Ford, se le considera el primer vehículo asequible para las masas gracias a la producción en cadena. 
+                        Esto hizo que el transporte personal fuera accesible para la clase media y cambió para siempre la forma de vivir y desplazarse. 
+                        También conocido como el "Tin Lizzie", era famoso por su sencillez, durabilidad y robustez.
+                    </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
+    </div>
+
+    <h4 class="mt-4 text-primary">Mercedes-Benz 300 SL</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/sl.jpg') }}" class="card-img-top" alt="Mercedes-Benz 300 SL">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes-Benz 300 SL</h5>
+                    <p class="card-text">
+                        El Mercedes-Benz 300 SL, apodado "Alas de Gaviota" por sus puertas icónicas, 
+                        es un deportivo clásico de lujo producido entre 1954 y 1963. 
+                        Fue el primer automóvil de producción en usar inyección directa de combustible, 
+                        y sus puertas únicas fueron una solución de ingeniería para su chasis tubular. 
+                        Con un motor de 3.0 litros y una velocidad máxima de 260 km/h, 
+                        fue uno de los coches más rápidos y deseados de su época.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mt-4 text-primary">Rolls-Royce Phantom</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/rolls.jpg') }}" class="card-img-top" alt="Rolls-Royce Phantom">
+                <div class="card-body">
+                    <h5 class="card-title">Rolls-Royce Phantom</h5>
+                    <p class="card-text">
+                        El Rolls-Royce Phantom es un sedán de superlujo fabricado a mano que representa el pináculo de la 
+                        artesanía automotriz. Con un motor V12 biturbo de 6,75 litros y una suspensión que proporciona una 
+                        conducción "Magic Carpet Ride", combina potencia con elegancia. 
+                        Su interior, elaborado con materiales de la más alta calidad, ofrece personalización casi ilimitada 
+                        y detalles como un techo con iluminación de fibra óptica. 
+                        Su precio base supera los 500.000 dólares.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h4 class="mt-4 text-primary">Jaguar E-Type</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/jaguar.webp') }}" class="card-img-top" alt="Jaguar E-Type">
+                <div class="card-body">
+                    <h5 class="card-title">Jaguar E-Type</h5>
+                    <p class="card-text">
+                        El Jaguar E-Type, producido entre 1961 y 1975, es un deportivo británico legendario por su diseño y rendimiento. 
+                        Enzo Ferrari lo llamó "el coche más bello jamás fabricado". 
+                        Contó con motores de seis cilindros en línea y, posteriormente, un V12. 
+                        Su combinación de estilo, velocidad y precio accesible lo convirtió en un éxito y un clásico codiciado hoy en día.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mt-4 text-primary">Cadillac Eldorado</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/cadillac.webp') }}" class="card-img-top" alt="Cadillac Eldorado">
+                <div class="card-body">
+                    <h5 class="card-title">Cadillac Eldorado</h5>
+                    <p class="card-text">
+                        El Cadillac Eldorado, producido de 1952 a 2002, es un ícono del lujo estadounidense. 
+                        Su nombre, inspirado en la legendaria "ciudad de oro", simboliza el esplendor automotriz. 
+                        Destacó por sus potentes motores V8 y su diseño imponente, especialmente el modelo de 1959 con sus grandes aletas traseras. 
+                        Fue el reflejo del estilo y la innovación de su época.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
-
-

@@ -1,108 +1,140 @@
 {% extends "activida.html" %}
 
-{% block title %}Maravillas DEl Mundo{% endblock %}
+{% block title %}Maravillas Del Mundo{% endblock %}
 
 {% block content %}
 <div class="text-center">
     <h2 class="text-warning fw-bold">Las 7 Maravillas del Mundo Moderno</h2>
     <p class="lead">Conoce los monumentos más impresionantes creados por la humanidad.</p>
 
-    <h4 class="mt-4 text-primary">Terrestres</h4>
-    <div class="row my-3">
-        {% for animal in ['boa blood', 'Serpiente'] %}
+
+    <h4 class="mt-4 text-primary">La Gran Muralla China</h4>
+    <div class="row my-3 justify-content-center">
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/boa.jpeg') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/m.jpg') }}" class="card-img-top" alt="Gran Muralla China">
                 <div class="card-body">
-                    <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">La boa blood es una boa constrictora enana de Centroamérica (originaria de El Salvador) caracterizada por su coloración intensa
-                            y los tonos cálidos de rojo, naranja y marrón, similar a un volcán. Es una boa de genética recesiva, 
-                        lo que significa que ambos padres deben portar el gen para que la característica se manifieste en la descendencia. Sus ojos son distintivamente oscuros</p>
+                    <h5 class="card-title">La Gran Muralla China</h5>
+                    <p class="card-text">
+                        La Gran Muralla China es una serie de fortificaciones defensivas que serpentea por el norte de 
+                        China a lo largo de 21.000 kilómetros. Iniciada en el siglo V a. C. para proteger el país de invasiones,
+                        la mayor parte de la estructura actual se construyó durante la dinastía Ming (1368-1644). 
+                        Es un símbolo de la civilización china y una de las atracciones turísticas más famosas del mundo.
+                    </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 
-    <h4 class="mt-4 text-primary">Acuaticos</h4>
-    <div class="row my-3">
-        {% for animal in ['Histrio histrio', 'Pez gato de cola roja'] %}
+
+    <h4 class="mt-4 text-primary">Petra (Jordania)</h4>
+    <div class="row my-3 justify-content-center">
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/hu.webp') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/petra.jpg') }}" class="card-img-top" alt="Petra">
                 <div class="card-body">
-                    <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">El ajolote es conocido como el Peter Pan de las salamandras. Si bien la mayoría de los anfibios superan su fase acuática para 
-                        comenzar su vida en tierra, el ajolote conserva en 
-                        gran parte sus características larvales y pasa su vida adulta en el agua. Sin embargo, continúa creciendo y llega alcanzar hasta 30 cm de largo.</p>
+                    <h5 class="card-title">Petra</h5>
+                    <p class="card-text">
+                        Petra, la antigua capital del reino nabateo en Jordania, es una de las Siete Nuevas Maravillas del Mundo
+                        y un sitio del Patrimonio Mundial de la UNESCO. Conocida como la "Ciudad Rosa" por los tonos de la piedra
+                        arenisca en la que fue tallada, Petra floreció como un centro comercial vital hace más de 2.000 años.
+                        Sus impresionantes fachadas, como El Tesoro (Al-Jazneh) y El Monasterio (Ad-Deir), fueron excavadas directamente
+                        en los acantilados por los ingeniosos nabateos.
+                    </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 
-    <h4 class="mt-4 text-primary">Aéreos</h4>
-    <div class="row my-3">
-        {% for animal in ['tucan', 'Búho'] %}
+
+    <h4 class="mt-4 text-primary">Cristo Redentor (Brasil)</h4>
+    <div class="row my-3 justify-content-center">
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/tucan.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/cristo.jpg') }}" class="card-img-top" alt="Cristo Redentor">
                 <div class="card-body">
-                    <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">e encuentran entre las aves más reconocibles del mundo debido a su inusual y enorme pico. Su apariencia única y colorida los convierte en 
-                        una especie muy apreciada, pero también los expone al riesgo de ser cazados para el comercio de mascotas.Los tucanes son nativos de los trópicos de 
-                        América y prefieren los bosques antiguos donde hay árboles grandes y viejos donde anidar.La familia del tucán incluye 50 especies,
-                            11 de las cuales están globalmente amenazadas o casi amenazadas de extinción. La deforestación en la cuenca amazónica para la ganadería y
-                            la producción de soja es especialmente preocupante para la especie, y otras amenazas incluyen la caza y el tráfico ilegal de fauna silvestre.</p>
+                    <h5 class="card-title">Cristo Redentor</h5>
+                    <p class="card-text">
+                        El Cristo Redentor, una impresionante estatua art déco de Jesucristo con los brazos abiertos,
+                        es el emblema de la ciudad de Río de Janeiro y de Brasil. Construida en la cima del cerro del Corcovado
+                        entre 1922 y 1931, esta majestuosa figura ofrece una vista panorámica espectacular.
+                        Considerada una de las Nuevas Siete Maravillas del Mundo, simboliza el abrazo de Cristo a toda la humanidad.
+                    </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 
-    <h4 class="mt-4 text-primary">Terrestres</h4>
-    <div class="row my-3">
-        {% for animal in ['Heterocephalus glaber', 'Búho'] %}
+    <h4 class="mt-4 text-primary">Machu Picchu (Perú)</h4>
+    <div class="row my-3 justify-content-center">
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/rata.webp') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/machu.jpg') }}" class="card-img-top" alt="Machu Picchu">
                 <div class="card-body">
-                    <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">Las ratas topo desnudas son eusociales, lo que significa que viven en grandes colonias donde solo una hembra se reproduce 
-                        y la mayoría de las obreras (machos y hembras) 
-                        pasan toda su vida trabajando para la colonia. Esta es una característica inusual en los mamíferos. 
-                        El tamaño promedio de la colonia es de 70 individuos, pero se han observado colonias de hasta 295.
-                        Los animales de estos grupos están estrechamente relacionados. Las obreras generalmente crían a sus hermanas, ya que una sola reina puede 
-                        reinar durante muchos años. La dispersión es bastante rara y la endogamia es común, lo que resulta en un alto grado de similitud genética entre los miembros de la 
-                        colonia. Si una reina muere o es expulsada de la colonia, algunas hembras pueden luchar a muerte para convertirse en la nueva reina.</p>
+                    <h5 class="card-title">Machu Picchu</h5>
+                    <p class="card-text">
+                        Machu Picchu, la "ciudad perdida de los incas", es una antigua ciudadela del siglo XV situada en los Andes peruanos.
+                        Construida por el emperador Pachacútec, sirvió como santuario religioso y residencia real antes de ser abandonada.
+                        Descubierta en 1911, sus impresionantes muros de piedra encastrada sin mortero la han convertido en Patrimonio de la Humanidad.
+                    </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 
-    
-    <h4 class="mt-4 text-primary">Anfibios</h4>
-    <div class="row my-3">
-        {% for animal in ['DiplocaulusAgalychnis callidryas', 'Ajolote'] %}
+
+    <h4 class="mt-4 text-primary">Chichén Itzá (México)</h4>
+    <div class="row my-3 justify-content-center">
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/ojosr.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/chichén.webp') }}" class="card-img-top" alt="Chichén Itzá">
                 <div class="card-body">
-                    <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">es una especie de anfibio anuro de la familia de Hylidae, que habita desde la parte oriental de Honduras hasta el noroeste de Colombia.
-                        Su nombre proviene del griego (aga) que significan "lleno de", (lychnos) "brillante" y el nombre de especie hace referencia a (kallos) "belleza" y (dryas) 
-                        "ninfa de árbol". Lo más notable son sus grandes ojos rojos con pupila vertical. Como adultos llegan a tener colores brillantes sobre todo su cuerpo.Predomina el verde,
-                            pero usualmente presentan otros colores como azul o amarillo.Las patas delanteras presentan un azul brillante, mientras que las traseras son rojas o anaranjadas.
-                            La coloración de esta rana 
-                        es muy llamativa. El macho es más pequeño que la hembra: 56 mm y la hembra 71 mm. Son de hábitos nocturnos y arborícolas.</p>
+                    <h5 class="card-title">Chichén Itzá</h5>
+                    <p class="card-text">
+                        Chichén Itzá es un emblemático sitio arqueológico maya en la península de Yucatán, conocido por su impresionante
+                        arquitectura que combina estilos maya y tolteca. Destacada por su Templo de Kukulcán, la ciudad fue un importante
+                        centro ceremonial con profundo significado astronómico y religioso.
+                    </p>
                 </div>
             </div>
         </div>
-        {% endfor %}
+    </div>
+
+    <!-- 6. Coliseo Romano -->
+    <h4 class="mt-4 text-primary">Coliseo Romano (Italia)</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/coliseo.jpg') }}" class="card-img-top" alt="Coliseo Romano">
+                <div class="card-body">
+                    <h5 class="card-title">Coliseo Romano</h5>
+                    <p class="card-text">
+                        El Coliseo, originalmente conocido como el Anfiteatro Flavio, es un impresionante símbolo de la antigua Roma
+                        y una de las Siete Nuevas Maravillas del Mundo Moderno. Construido en el siglo I d.C. para albergar espectáculos
+                        como combates de gladiadores, tenía una capacidad para más de 50.000 espectadores.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Taj Mahal -->
+    <h4 class="mt-4 text-primary">Taj Mahal (India)</h4>
+    <div class="row my-3 justify-content-center">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/taj.jpg') }}" class="card-img-top" alt="Taj Mahal">
+                <div class="card-body">
+                    <h5 class="card-title">Taj Mahal</h5>
+                    <p class="card-text">
+                        El Taj Mahal es un majestuoso mausoleo de mármol blanco ubicado en Agra, India. 
+                        Construido entre 1632 y 1653 por el emperador Shah Jahan en memoria de su esposa Mumtaz Mahal,
+                        es un símbolo de amor eterno y una obra maestra de la arquitectura mogol.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
 {% endblock %}
-
-

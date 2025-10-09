@@ -7,50 +7,101 @@
     <h2 class="text-success fw-bold">Animales Exóticos</h2>
     <p class="lead">Conoce algunos de los animales más fascinantes del planeta.</p>
 
-    <h4 class="mt-4 text-primary">🐠 Acuáticos</h4>
+    <h4 class="mt-4 text-primary">Terrestres</h4>
     <div class="row my-3">
-        {% for animal in ['Pez Mandarín', 'Caballito de Mar'] %}
+        {% for animal in ['boa blood', 'Serpiente'] %}
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/boa.jpeg') }}" class="card-img-top" alt="{{ animal }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">Hermoso ejemplar marino que habita en los océanos tropicales.</p>
+                    <p class="card-text">La boa blood es una boa constrictora enana de Centroamérica (originaria de El Salvador) caracterizada por su coloración intensa
+                            y los tonos cálidos de rojo, naranja y marrón, similar a un volcán. Es una boa de genética recesiva, 
+                        lo que significa que ambos padres deben portar el gen para que la característica se manifieste en la descendencia. Sus ojos son distintivamente oscuros</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    <h4 class="mt-4 text-primary">🐅 Terrestres</h4>
+    <h4 class="mt-4 text-primary">Acuaticos</h4>
     <div class="row my-3">
-        {% for animal in ['Tigre de Bengala', 'Camaleón'] %}
+        {% for animal in ['Histrio histrio', 'Pez gato de cola roja'] %}
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/hu.webp') }}" class="card-img-top" alt="{{ animal }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">Ejemplo de la diversidad de especies terrestres del mundo.</p>
+                    <p class="card-text">El ajolote es conocido como el Peter Pan de las salamandras. Si bien la mayoría de los anfibios superan su fase acuática para 
+                        comenzar su vida en tierra, el ajolote conserva en 
+                        gran parte sus características larvales y pasa su vida adulta en el agua. Sin embargo, continúa creciendo y llega alcanzar hasta 30 cm de largo.</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    <h4 class="mt-4 text-primary">🦜 Aéreos</h4>
+    <h4 class="mt-4 text-primary">Aéreos</h4>
     <div class="row my-3">
-        {% for animal in ['Guacamaya', 'Búho'] %}
+        {% for animal in ['tucan', 'Búho'] %}
         <div class="col-md-6 mb-3">
             <div class="card shadow-sm">
-                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <img src="{{ url_for('static', filename='imagenes/tucan.jpg') }}" class="card-img-top" alt="{{ animal }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ animal }}</h5>
-                    <p class="card-text">Aves majestuosas que llenan de vida el cielo.</p>
+                    <p class="card-text">e encuentran entre las aves más reconocibles del mundo debido a su inusual y enorme pico. Su apariencia única y colorida los convierte en 
+                        una especie muy apreciada, pero también los expone al riesgo de ser cazados para el comercio de mascotas.Los tucanes son nativos de los trópicos de 
+                        América y prefieren los bosques antiguos donde hay árboles grandes y viejos donde anidar.La familia del tucán incluye 50 especies,
+                            11 de las cuales están globalmente amenazadas o casi amenazadas de extinción. La deforestación en la cuenca amazónica para la ganadería y
+                            la producción de soja es especialmente preocupante para la especie, y otras amenazas incluyen la caza y el tráfico ilegal de fauna silvestre.</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+
+    <h4 class="mt-4 text-primary">Terrestres</h4>
+    <div class="row my-3">
+        {% for animal in ['Heterocephalus glaber', 'Búho'] %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/rata.webp') }}" class="card-img-top" alt="{{ animal }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal }}</h5>
+                    <p class="card-text">Las ratas topo desnudas son eusociales, lo que significa que viven en grandes colonias donde solo una hembra se reproduce 
+                        y la mayoría de las obreras (machos y hembras) 
+                        pasan toda su vida trabajando para la colonia. Esta es una característica inusual en los mamíferos. 
+                        El tamaño promedio de la colonia es de 70 individuos, pero se han observado colonias de hasta 295.
+                        Los animales de estos grupos están estrechamente relacionados. Las obreras generalmente crían a sus hermanas, ya que una sola reina puede 
+                        reinar durante muchos años. La dispersión es bastante rara y la endogamia es común, lo que resulta en un alto grado de similitud genética entre los miembros de la 
+                        colonia. Si una reina muere o es expulsada de la colonia, algunas hembras pueden luchar a muerte para convertirse en la nueva reina.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    
+    <h4 class="mt-4 text-primary">Anfibios</h4>
+    <div class="row my-3">
+        {% for animal in ['DiplocaulusAgalychnis callidryas', 'Ajolote'] %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/ojosr.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal }}</h5>
+                    <p class="card-text">es una especie de anfibio anuro de la familia de Hylidae, que habita desde la parte oriental de Honduras hasta el noroeste de Colombia.
+                        Su nombre proviene del griego (aga) que significan "lleno de", (lychnos) "brillante" y el nombre de especie hace referencia a (kallos) "belleza" y (dryas) 
+                        "ninfa de árbol". Lo más notable son sus grandes ojos rojos con pupila vertical. Como adultos llegan a tener colores brillantes sobre todo su cuerpo.Predomina el verde,
+                            pero usualmente presentan otros colores como azul o amarillo.Las patas delanteras presentan un azul brillante, mientras que las traseras son rojas o anaranjadas.
+                            La coloración de esta rana 
+                        es muy llamativa. El macho es más pequeño que la hembra: 56 mm y la hembra 71 mm. Son de hábitos nocturnos y arborícolas.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
 

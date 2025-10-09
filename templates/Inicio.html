@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-</head>
-<body>
-    {%extends"inicio.html"%}
-    {%block content%}
-        <h1>Inicio</h1>
-        <p>En esta pagina se encotrara diferentes sitios de informacion</p>
-        <div class="row my-4">
-            <div class="col-md-6">
-                <img src="{{imagenes.jpg('static', filename='imagenes.jpg')}}" class="img_fluid rounded" alt="imagenes.jpg">
+{% extends "activida.html" %}
 
-            </div>
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="fw-bold mb-4 text-primary">Bienvenido</h2>
+    <p class="lead">
+        En esta página encontrarás información sobre distintos temas fascinantes:
+        animales exóticos, vehículos antiguos, maravillas del mundo y más.
+    </p>
+
+    <div class="row justify-content-center my-4">
+        <div class="col-md-5 mb-3">
+            <img src="{{ url_for('static', filename='imagenes/images.jpg') }}" class="img-fluid rounded shadow-lg" alt="Imagen 1">
         </div>
-        <p>Explorar las secciones del menu para ver Animales Exoticos , Vehiculos Antiguos, Las Maravillas Del Mundo y la pagina acerca de...</p>
-        {%endblock%}
+        <div class="col-md-5">
+            <img src="{{ url_for('static', filename='imagenes/images.jpg') }}" class="img-fluid rounded shadow-lg" alt="Imagen 2">
+        </div>
+    </div>
 
-</body>
-</html>
+    <p class="text-muted">
+        Explora las secciones del menú para descubrir más contenido interesante.
+    </p>
+</div>
+{% endblock %}

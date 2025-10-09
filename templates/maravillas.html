@@ -1,0 +1,26 @@
+{% extends "activida.html" %}
+
+{% block title %}Maravillas del Mundo{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="text-warning fw-bold">Las 7 Maravillas del Mundo Moderno</h2>
+    <p class="lead">Conoce los monumentos más impresionantes creados por la humanidad.</p>
+
+    <div class="row my-4">
+        {% for lugar in ['Chichén Itzá', 'Coliseo de Roma', 'Cristo Redentor', 'Gran Muralla China', 'Machu Picchu', 'Petra', 'Taj Mahal'] %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ lugar }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ lugar }}</h5>
+                    <p class="card-text">Una de las grandes maravillas del mundo moderno.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

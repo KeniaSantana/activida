@@ -1,0 +1,26 @@
+{% extends "activida.html" %}
+
+{% block title %}Vehículos Antiguos{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="text-danger fw-bold">Vehículos Antiguos</h2>
+    <p class="lead">Una mirada al origen y evolución de los automóviles.</p>
+
+    <div class="row">
+        {% for vehiculo in ['Ford Modelo T', 'Chevrolet Bel Air', 'Volkswagen Escarabajo', 'Cadillac 1947', 'Mustang 1965'] %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ vehiculo }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ vehiculo }}</h5>
+                    <p class="card-text">Símbolo de innovación y diseño clásico.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

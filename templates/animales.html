@@ -1,0 +1,56 @@
+{% extends "activida.html" %}
+
+{% block title %}Animales Exóticos{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2 class="text-success fw-bold">Animales Exóticos</h2>
+    <p class="lead">Conoce algunos de los animales más fascinantes del planeta.</p>
+
+    <h4 class="mt-4 text-primary">🐠 Acuáticos</h4>
+    <div class="row my-3">
+        {% for animal in ['Pez Mandarín', 'Caballito de Mar'] %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal }}</h5>
+                    <p class="card-text">Hermoso ejemplar marino que habita en los océanos tropicales.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h4 class="mt-4 text-primary">🐅 Terrestres</h4>
+    <div class="row my-3">
+        {% for animal in ['Tigre de Bengala', 'Camaleón'] %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal }}</h5>
+                    <p class="card-text">Ejemplo de la diversidad de especies terrestres del mundo.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h4 class="mt-4 text-primary">🦜 Aéreos</h4>
+    <div class="row my-3">
+        {% for animal in ['Guacamaya', 'Búho'] %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/imagenes.jpg') }}" class="card-img-top" alt="{{ animal }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal }}</h5>
+                    <p class="card-text">Aves majestuosas que llenan de vida el cielo.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

@@ -22,5 +22,9 @@ def vehiculos():
 def acerca():
     return render_template("acerca.html")
 
+@app.route("/formulario")
+def formulario():
+    return render_template("formulario.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

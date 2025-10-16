@@ -5,12 +5,14 @@
 {% block content %}
 <div class="d-flex flex-column justify-content-center align-items-center text-center text-light" style="min-height: 80vh;">
     <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg">
-            <h3 class="text-center text-primary fw-bold mb-4 text-color">Formulario de Registro</h3>
+            <h3 class="text-center text-primary fw-bold mb-4 text-color">Registro</h3>
 
                 <form method="POST" action="{{ url_for('formulario') }}">
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                        <label for="nombre" class="form-label">Nombre </label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tus nombres" required>
+                            <label for="apellido" class="form-label">Apellido </label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escribe tus apellidos" required>
                     </div>
 
                     <div class="mb-3">
@@ -19,7 +21,9 @@
                     </div>
 
                         <div class="row mb-3">
+                                <label for="correo" class="form-label">Fecha de nacimiento</label>
                 <div class="col">
+                
                     <select class="form-select" aria-label="Seleccione un día">
                         <option selected></option>
                         <option value="1">1</option>
@@ -178,6 +182,7 @@
                     <div class="mb-3">
                         <label for="mensaje" class="form-label">Mensaje o motivo</label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Escribe aquí..." required></textarea>
+                        <label for="mensaje" class="form-label">minimo 20 caracteres</label>
                     </div>
 
                     <div class="text-center">

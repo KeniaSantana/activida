@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Facebook</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-</head>
-<body class="bg-light">
+{% extends "activida.html" %}
 
-    <div class="container mt-5">
-        <div class="text-center">
-            <h1 class="text-primary fw-bold">Facebook</h1>
-            <h3 id="title">Crea una cuenta</h3>
-            <p class="lead">Es rapido y facil</p>
-        </div>
+{% block title %}Lobby{% endblock %}
 
-        <form class="mx-auto p-4 border rounded bg-white shadow" style="width: 500px;">
-            
-            <div class="row mb-3">
-                <div class="col">
-                    <input type="text" id="nombre" class="form-control" placeholder="Nombre" name="nombre" required>
-                </div>
-                <div class="col">
-                    <input type="text" id="apellido" class="form-control" placeholder="Apellido" name="apellido" required>
-                </div>
-            </div>
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center text-center text-light" style="min-height: 80vh;">
+    <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg">
+            <h3 class="text-center text-primary fw-bold mb-4 text-color">Formulario de Registro</h3>
 
-            <div class="row mb-3">
+                <form method="POST" action="{{ url_for('formulario') }}">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                        <div class="row mb-3">
                 <div class="col">
                     <select class="form-select" aria-label="Seleccione un día">
                         <option selected></option>
@@ -183,40 +175,19 @@
                 </div>
             </div>
 
-            <div class="mb-3">
-                <input type="email" id="correo" class="form-control" placeholder="Número de teléfono o correo electrónico" name="correo" required>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje o motivo</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Escribe aquí..." required></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="mb-3">
-                <input type="password" id="contraseña" class="form-control" placeholder="Contraseña nueva" name="contraseña" required>
-            </div>
-
-            <div class="mb-3">
-                <p>Es posible que las personas que usan nuestro servicio hayan subido tu información de contacto a Facebook.
-                    <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="https://www.facebook.com/help/637205020878504/?helpref=uf_share">
-                        Mas Informacion
-                    </a>
-                </p>
-            
-                <p>Al hacer clic en "Registrarte", aceptas nuestras 
-                    <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="https://www.facebook.com/legal/terms/update">Condiciones,</a>  
-                    la <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0">Política de privacidad</a>
-                    y la <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="https://www.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0">Política de cookies.</a> 
-                    Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras
-                </p>
-            </div>
-
-            <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-success">Registrarte</button>
-            </div>
-
-            <p class="text-center">
-                <a href="#">Ya tienes una cuenta?</a>
-            </p>
-
-            <p>Hecho por: Santana Ruiz Kenia Alejandra de 5-D</p>
-        </form>
+        </div>
     </div>
-
-</body>
-</html>
+</div>
+    </div>
+</div>
+{% endblock %}

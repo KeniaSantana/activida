@@ -7,24 +7,32 @@
     <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg">
             <h3 class="text-center text-primary fw-bold mb-4 text-color">Registro</h3>
 
-                <form method="POST" action="{{ url_for('formulario') }}">
+                <form id="formulario" method="POST" action="/registro">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre </label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tus nombres" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tus nombres" required value="{{request.form.get('nombre','')}}">
+
                             <label for="apellido" class="form-label">Apellido </label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escribe tus apellidos" required>
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escribe tus apellidos" required value="{{request.form.get('apellido','')}}">
+
+
                     </div>
 
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required value="{{request.form.get('correo','')}}">
+                    </div>
+
+                        <div class="mb-3">
+                        <label for="contraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="escribe la contraseña" required value="{{request.form.get('contraseña','')}}">
                     </div>
 
                         <div class="row mb-3">
-                                <label for="correo" class="form-label">Fecha de nacimiento</label>
+                                <label for="fecha" class="form-label">Fecha de nacimiento</label>
                 <div class="col">
                 
-                    <select class="form-select" aria-label="Seleccione un día">
+                    <select class="form-select"  name="dia" aria-label="Seleccione un día"  value="{{request.form.get('dia','')}}">
                         <option selected></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -61,7 +69,7 @@
                 </div>
 
                 <div class="col">
-                    <select class="form-select" aria-label="Seleccione un mes">
+                    <select class="form-select" name="mes" aria-label="Seleccione un mes" value="{{request.form.get('mes','')}}">
                         <option selected></option>
                         <option value="1">Enero</option>
                         <option value="2">Febrero</option>
@@ -79,7 +87,7 @@
                 </div>
 
                 <div class="col">
-                    <select class="form-select" aria-label="Seleccione un año">
+                    <select class="form-select" name="año" aria-label="Seleccione un año" value="{{request.form.get('año','')}}">
                         <option selected></option>
                         <option value="1950">1950</option>
                         <option value="1951">1951</option>
@@ -165,15 +173,15 @@
                 <label class="form-label">Genero</label>
                 <div class="d-flex justify-content-around">
                     <div class="form-check">
-                        <input type="radio" id="mujer" class="form-check-input" name="genero" value="mujer" required>
+                        <input type="radio" id="mujer" class="form-check-input" name="genero"  required value="{{request.form.get('mujer','')}}">
                         <label for="mujer" class="form-check-label">Mujer</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="hombre" class="form-check-input" name="genero" value="hombre">
+                        <input type="radio" id="hombre" class="form-check-input" name="genero" value="{{request.form.get('hombre','')}}" >
                         <label for="hombre" class="form-check-label">Hombre</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="personalizado" class="form-check-input" name="genero" value="personalizado">
+                        <input type="radio" id="personalizado" class="form-check-input" name="genero" value="{{request.form.get('personalizado','')}}" >
                         <label for="personalizado" class="form-check-label">Personalizado</label>
                     </div>
                 </div>
@@ -186,6 +194,7 @@
                     </div>
 
                     <div class="text-center">
+                    
                         <button type="submit" class="btn btn-primary w-100">Enviar</button>
                     </div>
                 </form>

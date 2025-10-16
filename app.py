@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+
 
 app = Flask(__name__)
 
@@ -43,6 +44,7 @@ def registro():
         dia = request.form.get("dia")
         mes = request.form.get("mes")
         año = request.form.get("año")
+        return redirect(url_for("inicio"))
     return render_template("formulario.html")
 
 

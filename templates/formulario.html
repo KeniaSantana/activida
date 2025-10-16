@@ -5,33 +5,31 @@
 {% block content %}
 <div class="d-flex flex-column justify-content-center align-items-center text-center text-light" style="min-height: 80vh;">
     <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg">
-            <h3 class="text-center text-primary fw-bold mb-4 text-color">Registro</h3>
+        <h3 class="text-center text-primary fw-bold mb-4 text-color">Registro</h3>
 
-                <form id="formulario" method="POST" action="/registro">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre </label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tus nombres" required value="{{request.form.get('nombre','')}}">
+        <form id="formulario" method="POST" action="/registro">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre </label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tus nombres" required value="{{request.form.get('nombre','')}}">
 
-                            <label for="apellido" class="form-label">Apellido </label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escribe tus apellidos" required value="{{request.form.get('apellido','')}}">
+                <label for="apellido" class="form-label mt-3">Apellido </label>
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escribe tus apellidos" required value="{{request.form.get('apellido','')}}">
+            </div>
 
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required value="{{request.form.get('correo','')}}">
+            </div>
 
-                    </div>
+            <div class="mb-3">
+                <label for="contraseña" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Escribe la contraseña" required value="{{request.form.get('contraseña','')}}">
+            </div>
 
-                    <div class="mb-3">
-                        <label for="correo" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required value="{{request.form.get('correo','')}}">
-                    </div>
-
-                        <div class="mb-3">
-                        <label for="contraseña" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="escribe la contraseña" required value="{{request.form.get('contraseña','')}}">
-                    </div>
-
-                        <div class="row mb-3">
-                                <label for="fecha" class="form-label">Fecha de nacimiento</label>
+            <!-- Fecha de nacimiento -->
+            <div class="row mb-3">
+                <label for="fecha" class="form-label">Fecha de nacimiento</label>
                 <div class="col">
-                
                     <select class="form-select"  name="dia" aria-label="Seleccione un día"  value="{{request.form.get('dia','')}}">
                         <option selected></option>
                         <option value="1">1</option>
@@ -169,39 +167,56 @@
                 </div>
             </div>
 
+            <!-- Género -->
             <div class="mb-3">
                 <label class="form-label">Genero</label>
                 <div class="d-flex justify-content-around">
                     <div class="form-check">
-                        <input type="radio" id="mujer" class="form-check-input" name="genero"  required value="{{request.form.get('mujer','')}}">
+                        <input type="radio" id="mujer" class="form-check-input" name="genero" required value="Mujer" {% if request.form.get('genero') == 'Mujer' %}checked{% endif %}>
                         <label for="mujer" class="form-check-label">Mujer</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="hombre" class="form-check-input" name="genero" value="{{request.form.get('hombre','')}}" >
+                        <input type="radio" id="hombre" class="form-check-input" name="genero" value="Hombre" {% if request.form.get('genero') == 'Hombre' %}checked{% endif %}>
                         <label for="hombre" class="form-check-label">Hombre</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="personalizado" class="form-check-input" name="genero" value="{{request.form.get('personalizado','')}}" >
+                        <input type="radio" id="personalizado" class="form-check-input" name="genero" value="Personalizado" {% if request.form.get('genero') == 'Personalizado' %}checked{% endif %}>
                         <label for="personalizado" class="form-check-label">Personalizado</label>
                     </div>
                 </div>
             </div>
 
-                    <div class="mb-3">
-                        <label for="mensaje" class="form-label">Mensaje o motivo</label>
-                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Escribe aquí..." required></textarea>
-                        <label for="mensaje" class="form-label">minimo 20 caracteres</label>
-                    </div>
-
-                    <div class="text-center">
-                    
-                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                    </div>
-                </form>
+            <!-- Mensaje -->
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje o motivo</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Escribe aquí..." required>{{request.form.get('mensaje','')}}</textarea>
+                <small class="form-text text-light">Mínimo 20 caracteres</small>
             </div>
-        </div>
-    </div>
-</div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </div>
+        </form>
+
+        <hr class="my-5 text-light">
+
+        <!-- LOGIN -->
+        <h3 class="text-center text-success fw-bold mb-4">Iniciar Sesión</h3>
+        <form id="formulario-login" method="POST" action="/registro">
+            <div class="mb-3">
+                <label for="correo-login" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo-login" name="correo" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="contraseña-login" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contraseña-login" name="contraseña" placeholder="Escribe tu contraseña" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success w-100">Iniciar Sesión</button>
+            </div>
+        </form>
     </div>
 </div>
 {% endblock %}

@@ -7,6 +7,22 @@
     <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg">
         <h3 class="text-center text-primary fw-bold mb-4 text-color">Registro</h3>
 
+        <div class="card-body p-4 p-md-5">
+            <div class="container m-4">
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+
+
         <form id="formulario" method="POST" action="/registro">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre </label>
@@ -26,7 +42,7 @@
                 <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Escribe la contraseña" required value="{{request.form.get('contraseña','')}}">
             </div>
 
-            <!-- Fecha de nacimiento -->
+        
             <div class="row mb-3">
                 <label for="fecha" class="form-label">Fecha de nacimiento</label>
                 <div class="col">
@@ -167,7 +183,7 @@
                 </div>
             </div>
 
-            <!-- Género -->
+
             <div class="mb-3">
                 <label class="form-label">Genero</label>
                 <div class="d-flex justify-content-around">
@@ -186,7 +202,7 @@
                 </div>
             </div>
 
-            <!-- Mensaje -->
+
             <div class="mb-3">
                 <label for="mensaje" class="form-label">Mensaje o motivo</label>
                 <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Escribe aquí..." required>{{request.form.get('mensaje','')}}</textarea>
@@ -200,7 +216,6 @@
 
         <hr class="my-5 text-light">
 
-        <!-- LOGIN -->
         <h3 class="text-center text-success fw-bold mb-4">Iniciar Sesión</h3>
         <form id="formulario-login" method="POST" action="/registro">
             <div class="mb-3">

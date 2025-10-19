@@ -1,0 +1,46 @@
+{% extends "activida.html" %}
+
+{% block title %}Iniciar Sesion{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center text-center text-light" style="min-height: 80vh;">
+    <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg">
+        <h3 class="text-center text-primary fw-bold mb-4 text-color">Iniciar Sesion</h3>
+
+        <div class="card-body p-4 p-md-5">
+            <div class="container m-4">
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+
+
+        <form id="sesion" method="POST" action="/iniciar">
+                <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Iniciar Sesión</button>
+        </form>
+
+        <hr class="my-4 text-light">
+        <a href="{{ url_for('registro') }}" class="btn btn-outline-primary w-100">¿No tienes cuenta? Regístrate</a>
+    </div>
+</div>
+        </form>
+</div>
+{% endblock %}

@@ -188,15 +188,15 @@
                 <label class="form-label">Genero</label>
                 <div class="d-flex justify-content-around">
                     <div class="form-check">
-                        <input type="radio" id="mujer" class="form-check-input" name="genero" required value="Mujer" {% if request.form.get('genero') == 'Mujer' %}checked{% endif %}>
+                        <input type="radio" id="mujer" class="form-check-input" name="genero" required value="{{request.form.get('mujer','')}}">
                         <label for="mujer" class="form-check-label">Mujer</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="hombre" class="form-check-input" name="genero" value="Hombre" {% if request.form.get('genero') == 'Hombre' %}checked{% endif %}>
+                        <input type="radio" id="hombre" class="form-check-input" name="genero" value="{{request.form.get('hombre','')}}" >
                         <label for="hombre" class="form-check-label">Hombre</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="personalizado" class="form-check-input" name="genero" value="Personalizado" {% if request.form.get('genero') == 'Personalizado' %}checked{% endif %}>
+                        <input type="radio" id="personalizado" class="form-check-input" name="genero" value="{{request.form.get('personalizado','')}}" >
                         <label for="personalizado" class="form-check-label">Personalizado</label>
                     </div>
                 </div>

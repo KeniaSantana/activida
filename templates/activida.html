@@ -53,8 +53,10 @@
             </div>
         </nav>
 <div>
+    {%if session.get('logout')%}
+<a>  Bienvenido{{session.get('usuarios')}}</a>
 
-    Bienvenido{{session.get('usuarios')}}
+{%if not session.get('logout')%}
 </div>
         <main class="container py-5">
             {% block content %}{% endblock %}

@@ -76,8 +76,8 @@ def iniciar():
 
 
 @app.route("/logout")
-def logout():
-    if session.get('logueado')==True:
+def login():
+    if session.get('logout')==True:
         session.clear()
         session.pop("usuarios",None)
         return render_template("inicio.html")

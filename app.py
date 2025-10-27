@@ -63,7 +63,7 @@ def sesion():
 def iniciar():
     email = request.form.get("email")
     password = request.form.get("password")
-
+    
     if email not in usuarios:
         flash("El correo no está registrado.", "danger")
         return redirect(url_for("sesion"))
@@ -74,6 +74,15 @@ def iniciar():
         flash("Inicio de sesión exitoso.", "success")
         return redirect(url_for("inicio"))
 
+
+@app.route("/logout")
+def logout():
+    if session.get('logueado')==True:
+        session.clear()
+        session.pop("usuarios",None)
+        return render_template("inicio.html")
+    return render_template("activida.html")
+    
 
 
 if __name__ == "__main__":

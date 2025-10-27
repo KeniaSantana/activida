@@ -47,11 +47,15 @@
                         <li class="nav-item"><a href="{{ url_for('vehiculos') }}" class="nav-link">Vehículos</a></li>
                         <li class="nav-item"><a href="{{ url_for('maravillas') }}" class="nav-link">Maravillas</a></li>
                         <li class="nav-item"><a href="{{ url_for('acerca') }}" class="nav-link">Acerca de</a></li>
+                        <li class="nav-item"><a href="{{ url_for('activida') }}" class="nav-link">Cerrar sesion</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+<div>
 
+    Bienvenido{{session.get('usuarios')}}
+</div>
         <main class="container py-5">
             {% block content %}{% endblock %}
         </main>

@@ -5,7 +5,14 @@ app = Flask(__name__)
 app.secret_key = "clave_secreta" 
 
 
-usuarios = {}
+usuarios = [
+        {"nombre":"Frida",
+        "apellido":"Kahlo",
+        "correo":"123356978@gnmail.com",
+        "contraseña":"frida123",
+        }
+    ]
+
 
 @app.route("/")
 def lobby():
@@ -46,6 +53,15 @@ def registro():
     dia = request.form.get("dia")
     mes = request.form.get("mes")
     año = request.form.get("año")
+    
+    usuarios.append(
+        {
+            "nombre":nombre,
+            "apellido":apellido,
+            "contraseña":contraseña,
+            "correo":correo,
+        }
+    )
 
     if correo in usuarios:
         flash("Este correo ya está registrado.", "warning")
@@ -67,6 +83,14 @@ def sesion():
 def iniciar():
     email = request.form.get("email")
     password = request.form.get("password")
+    frida = None
+    
+    for usuario in usuarios:
+        if usuario["correo"] == email:
+            frida = usuario
+            pass
+        pass
+    
     if email not in usuarios:
         flash("El correo no está registrado.", "danger")
         return redirect(url_for("sesion"))
@@ -74,10 +98,9 @@ def iniciar():
         flash("La contraseña no coincide.", "danger")
         return redirect(url_for("sesion"))
     else:
-        # Guardamos el usuario en la sesión
-        session["usuario"] = email
+        session["usuario"] = frida["nombre"]
         session["logout"] = True
-        flash(f"Inicio de sesión exitoso. Bienvenido, {email}!", "success")
+        flash(f"Inicio de sesión exitoso. Bienvenido, {frida}!", "success")
         return redirect(url_for("inicio"))
 
 

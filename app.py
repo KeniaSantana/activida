@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
+
 
 app = Flask(__name__)
 app.secret_key = "clave_secreta" 
@@ -59,11 +60,13 @@ def registro():
 def sesion():
     return render_template("sesion.html")
 
+
+
+
 @app.route("/iniciar", methods=["POST"])
 def iniciar():
     email = request.form.get("email")
     password = request.form.get("password")
-    
     if email not in usuarios:
         flash("El correo no está registrado.", "danger")
         return redirect(url_for("sesion"))
@@ -71,18 +74,19 @@ def iniciar():
         flash("La contraseña no coincide.", "danger")
         return redirect(url_for("sesion"))
     else:
-        flash("Inicio de sesión exitoso.", "success")
+        # Guardamos el usuario en la sesión
+        session["usuario"] = email
+        session["logout"] = True
+        flash(f"Inicio de sesión exitoso. Bienvenido, {email}!", "success")
         return redirect(url_for("inicio"))
 
 
 @app.route("/logout")
-def login():
-    if session.get('logout')==True:
-        session.clear()
-        session.pop("usuarios",None)
-        return render_template("inicio.html")
-    return render_template("activida.html")
-    
+def logout():
+    session.clear()
+    flash("Has cerrado sesión correctamente.", "info")
+    return redirect(url_for("inicio"))
+
 
 
 if __name__ == "__main__":
